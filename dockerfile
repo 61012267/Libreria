@@ -10,4 +10,4 @@ WORKDIR /app
 COPY --from=build /app/publish .
 ENV PORT=10000
 EXPOSE 10000
-ENTRYPOINT ["dotnet", "LuminaLibros.dll"]
+ENTRYPOINT ["dotnet", "Libreria.dll"]
