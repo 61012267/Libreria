@@ -43,16 +43,19 @@ var promociones = new List<Promocion>
     new(3, "Noches de novela", "15% de descuento en libros de Novela.", 15, "NOVELA15", 1)
 };
 
+// Portadas reales desde Open Library (si no existe la portada, el frontend usa una de respaldo)
+string Cov(string isbn) => $"https://covers.openlibrary.org/b/isbn/{isbn}-L.jpg?default=false";
+
 var productos = new List<Producto>
 {
-    new(1, "978-0-06-088328-7", "Cien años de soledad", 1, 1, "La saga de los Buendía en Macondo: un siglo de amor, guerra y soledad.", 59.90m, 25, 471, 1967, "#f59e0b", "#b45309", 4.9, true),
-    new(2, "978-84-663-0108-6", "La ciudad y los perros", 2, 1, "Cadetes, jerarquías y secretos en un colegio militar de Lima.", 49.50m, 18, 352, 1963, "#0ea5e9", "#1e3a8a", 4.6, false),
-    new(3, "978-0-553-38380-5", "La casa de los espíritus", 3, 1, "Tres generaciones de mujeres entre lo mágico y lo político.", 54.00m, 12, 433, 1982, "#ec4899", "#831843", 4.7, true),
-    new(4, "978-84-206-3664-3", "Ficciones", 4, 2, "Laberintos, bibliotecas infinitas y espejos en cuentos inolvidables.", 42.90m, 20, 224, 1944, "#10b981", "#064e3b", 4.8, true),
-    new(5, "978-84-206-3665-0", "El Aleph", 4, 2, "Un punto del espacio que contiene todos los puntos.", 39.90m, 3, 192, 1949, "#a78bfa", "#4c1d95", 4.7, false),
-    new(6, "978-0-307-47458-6", "Crónica de una muerte anunciada", 1, 1, "Todos sabían que lo iban a matar. Nadie lo evitó.", 35.00m, 30, 122, 1981, "#f43f5e", "#881337", 4.5, false),
-    new(7, "978-84-204-0831-0", "La civilización del espectáculo", 2, 4, "Un ensayo sobre la cultura en la era del entretenimiento.", 52.90m, 9, 240, 2012, "#14b8a6", "#134e4a", 4.2, false),
-    new(8, "978-0-06-117036-3", "Paula", 3, 3, "Una carta a su hija que se convierte en memoria familiar.", 45.00m, 0, 330, 1994, "#fb923c", "#7c2d12", 4.6, false)
+    new(1, "9780060883287", "Cien años de soledad", 1, 1, "La saga de los Buendía en Macondo: un siglo de amor, guerra y soledad.", 59.90m, 25, 471, 1967, "#f59e0b", "#b45309", 4.9, true, Cov("9780060883287")),
+    new(2, "9780312420277", "La fiesta del Chivo", 2, 1, "Los últimos días del dictador Trujillo, contados desde tres miradas.", 56.00m, 18, 416, 2000, "#0ea5e9", "#1e3a8a", 4.6, false, Cov("9780312420277")),
+    new(3, "9780553383805", "La casa de los espíritus", 3, 1, "Tres generaciones de mujeres entre lo mágico y lo político.", 54.00m, 12, 433, 1982, "#ec4899", "#831843", 4.7, true, Cov("9780553383805")),
+    new(4, "9780802130303", "Ficciones", 4, 2, "Laberintos, bibliotecas infinitas y espejos en cuentos inolvidables.", 42.90m, 20, 224, 1944, "#10b981", "#064e3b", 4.8, true, Cov("9780802130303")),
+    new(5, "9780142437889", "El Aleph", 4, 2, "Un punto del espacio que contiene todos los puntos.", 39.90m, 3, 192, 1949, "#a78bfa", "#4c1d95", 4.7, false, Cov("9780142437889")),
+    new(6, "9781400034956", "Crónica de una muerte anunciada", 1, 1, "Todos sabían que lo iban a matar. Nadie lo evitó.", 35.00m, 30, 122, 1981, "#f43f5e", "#881337", 4.5, false, Cov("9781400034956")),
+    new(7, "978-84-204-0831-0", "La civilización del espectáculo", 2, 4, "Un ensayo sobre la cultura en la era del entretenimiento.", 52.90m, 9, 240, 2012, "#14b8a6", "#134e4a", 4.2, false, ""),
+    new(8, "978-0-06-117036-3", "Paula", 3, 3, "Una carta a su hija que se convierte en memoria familiar.", 45.00m, 0, 330, 1994, "#fb923c", "#7c2d12", 4.6, false, "")
 };
 
 // 4. Endpoints (solo lectura)
